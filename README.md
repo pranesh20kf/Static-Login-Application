@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# Static-Login-Application
+The project includes a login page with static data.
+A dashboard is implemented to display the main content.
+It features a MainLayout that integrates a sidebar, header, and footer using Tailwind CSS.
+A form is included, which prints input data to the console.
+The project has a table that fetches and displays data from a dummy API.
+A list component is implemented for additional functionality.
+Additionally, Leaflet is used to create and display an interactive map.
+>>>>>>> 0420dd7df3a744d37b0edddf429f59fe6af89caf
