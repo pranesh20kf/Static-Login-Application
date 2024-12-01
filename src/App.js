@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Form from './components/Form';
+import Mainlayout from './components/Mainlayout';
+import Dashboard from './components/Dashboard';
+import Profile from './components/Profile';
+import Table from './components/Table';
+import { Navigate } from 'react-router-dom';
+import Tabledata from './components/Tabledata';
+import Mapdata from './components/Mapdata';
+import 'leaflet/dist/leaflet.css';
 
-function App() {
+const App = () => {
+  const [user , setUser] = useState('')
+  //const navigate = useNavigate();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="Login" element={<Form setUser={setUser}/>} />
+        {user === 'Pranesh' ? (
+           <Route path="/" element={<Mainlayout />}>
+           {/* Nested Routes inside MainLayout */}
+           <Route path="dashboard" element={<Dashboard userName={user} />} />
+           <Route path="profile" element={<Profile />} />
+           <Route path="table" element={<Table/>} />
+           <Route path="tabledata" element={<Tabledata/>} />
+           <Route path="mapdata" element={<Mapdata/>} />
+         </Route>
+        ) : (
+          <Route path="*" element={<Navigate to="/Login" replace />} />
+        )} 
+       
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
